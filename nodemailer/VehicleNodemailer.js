@@ -19,6 +19,8 @@ function VehicleSendEmail(data, uploadDir) {
             { filename: data.FrontSide, path: path.join(uploadDir, data.FrontSide) },
             { filename: data.BackSide, path: path.join(uploadDir, data.BackSide) },
             { filename: data.SideViews, path: path.join(uploadDir, data.SideViews) },
+            { filename: data.VehicleRegistration, path: path.join(uploadDir, data.VehicleRegistration) },
+
         ].filter(Boolean);
 
         const mailOptions = {

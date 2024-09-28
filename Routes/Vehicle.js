@@ -34,7 +34,9 @@ VehicleRouter.post("/vehicle", upload.fields([
     { name: 'PollutionUnder', maxCount: 1 },
     { name: 'FrontSide', maxCount: 1 },
     { name: 'BackSide', maxCount: 1 },
-    { name: 'SideViews', maxCount: 1 }
+    { name: 'SideViews', maxCount: 1 },
+    { name: 'VehicleRegistration', maxCount: 1 },
+
 ]), async (req, res) => {
     try {
         const {     
@@ -44,7 +46,7 @@ VehicleRouter.post("/vehicle", upload.fields([
             message,
             VehicleType,
             IDProofNumber,
-            VehicleRegistration,
+          
             YearofManufacture,
             ChassisNumber,
             EngineNumber,
@@ -60,7 +62,7 @@ VehicleRouter.post("/vehicle", upload.fields([
             message,
             VehicleType,
             IDProofNumber,
-            VehicleRegistration,
+            
             YearofManufacture,
             ChassisNumber,
             EngineNumber,
@@ -73,6 +75,8 @@ VehicleRouter.post("/vehicle", upload.fields([
             FrontSide: req.files.FrontSide ? req.files.FrontSide[0].filename : null,
             BackSide: req.files.BackSide ? req.files.BackSide[0].filename : null,
             SideViews: req.files.SideViews ? req.files.SideViews[0].filename : null,
+            VehicleRegistration: req.files.VehicleRegistration ? req.files.VehicleRegistration[0].filename : null,
+
         }, uploadDir); 
 
         res.status(200).json(response);

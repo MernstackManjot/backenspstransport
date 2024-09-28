@@ -1,5 +1,6 @@
 const nodemailer = require("nodemailer");
 const path = require("path");
+require("dotenv").config();
 
 function DriverSendEmail(data, uploadDir) {
     return new Promise((resolve, reject) => {
